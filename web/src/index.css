@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --primary-teal: #4db5b5;
+  --primary-blue: #6b9ac4;
+  --alert-coral: #ff8b78;
+  --alert-orange: #ffb74d;
+  --bg-light: #f9f9f9;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --white: #ffffff;
+
+  /* Layout */
+  --max-width: 480px;
+  --border-radius: 16px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #e2e8f0;
+  /* Darker background for the body behind the app container */
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: var(--max-width);
+  height: 100vh;
+  background-color: var(--bg-light);
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar hiding for cleaner mobile look */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Utilities */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+/* Typography styles */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* Animations will be handled by Framer Motion, but basic transitions go here */
+.transition-base {
+  transition: all 0.3s ease;
+}
+
+/* App Container */
+.app-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Screen Layouts */
+.screen-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-light);
+  overflow-y: auto;
+}
+
+.home-header {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border: 2px solid var(--primary-teal);
+}
+
+/* Orb Component */
+.hero-section {
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.orb-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orb-core {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.orb-glow {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  filter: blur(20px);
+}
+
+/* Feed Section & Cards */
+.feed-section {
+  flex: 1;
+  padding: 0 24px 24px 24px;
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wellness-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.card-icon {
+  color: var(--primary-blue);
+  margin-right: 12px;
+}
+
+.card-title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-text {
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.card-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Navigation Bar */
+.nav-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.02);
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  padding: 0 16px;
+}
+
+.nav-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 60px;
+}
+
+/* Settings Controls */
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--white);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.toggle {
+  width: 44px;
+  height: 24px;
+  background-color: #cbd5e0;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle.active {
+  background-color: var(--primary-teal);
+}
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Floating Chat Action Button */
+.floating-chat-btn {
+  position: absolute;
+  bottom: 90px;
+  right: 24px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--primary-teal);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(77, 181, 181, 0.4);
+  border: none;
+  cursor: pointer;
+  z-index: 50;
+}
