@@ -28,8 +28,8 @@ const Splash = () => {
         >
           <span style={{ fontSize: '48px' }}> <LeafIcon size={70} color='var(--primary-teal)' /> </span>
         </motion.div>
-        <h1 style={{ color: 'var(--primary-teal)', marginBottom: '8px', fontSize: '32px' }}>ManasSakhi</h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '18px', letterSpacing: '2px' }}>മനസ്സാഖി</p>
+        <h1 style={{ color: 'var(--primary-teal)', marginBottom: '8px', fontSize: '32px' }}>ManaSakhi</h1>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '18px', letterSpacing: '2px' }}>മനസ്സഖി</p>
       </motion.div>
     </div>
   );

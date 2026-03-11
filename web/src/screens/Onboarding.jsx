@@ -7,7 +7,7 @@ import Button from '../components/Button';
 const slides = [
   {
     icon: <Sparkles size={64} color="var(--primary-teal)" />,
-    title: "Welcome to ManasSakhi",
+    title: "Welcome to ManaSakhi",
     text: "Your personal companion for mental wellness. Track your mood, try exercises, and find peace.",
     buttonText: "Next"
   },
@@ -39,7 +39,7 @@ const Onboarding = () => {
 
   return (
     <div className="full-screen flex-col flex-center padding-box" style={{ padding: '24px', backgroundColor: 'var(--bg-light)' }}>
-        
+
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%' }}>
         <AnimatePresence mode="wait">
           <motion.div
@@ -62,8 +62,8 @@ const Onboarding = () => {
       <div style={{ width: '100%', paddingBottom: '32px' }}>
         <div className="flex-center" style={{ gap: '8px', marginBottom: '32px' }}>
           {slides.map((_, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               style={{
                 width: currentSlide === index ? '24px' : '8px',
                 height: '8px',
