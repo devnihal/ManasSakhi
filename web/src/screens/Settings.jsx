@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppContext } from '../App';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
@@ -6,6 +6,15 @@ import { Lock, Settings as SettingsIcon } from 'lucide-react';
 
 const Settings = () => {
   const { currentMood, toggleMood } = useContext(AppContext);
+  const [preferences, setPreferences] = useState({
+    keystroke: true,
+    voice: false,
+    notifications: true
+  });
+
+  const togglePreference = (key) => {
+    setPreferences(prev => ({ ...prev, [key]: !prev[key] }));
+  };
 
   return (
     <div className="screen-container">
@@ -30,22 +39,34 @@ const Settings = () => {
           
           <div className="setting-item">
             <span>Keystroke Sensing</span>
-            <div className="toggle active">
-               <div className="toggle-thumb" style={{ right: '2px', left: 'auto' }} />
+            <div 
+              className={`toggle ${preferences.keystroke ? 'active' : ''}`}
+              onClick={() => togglePreference('keystroke')}
+              style={{ cursor: 'pointer' }}
+            >
+               <div className="toggle-thumb" style={preferences.keystroke ? { right: '2px', left: 'auto' } : { left: '2px', right: 'auto' }} />
             </div>
           </div>
           
           <div className="setting-item">
             <span>Voice Analysis</span>
-            <div className="toggle">
-               <div className="toggle-thumb" style={{ left: '2px' }} />
+            <div 
+              className={`toggle ${preferences.voice ? 'active' : ''}`}
+              onClick={() => togglePreference('voice')}
+              style={{ cursor: 'pointer' }}
+            >
+               <div className="toggle-thumb" style={preferences.voice ? { right: '2px', left: 'auto' } : { left: '2px', right: 'auto' }} />
             </div>
           </div>
           
           <div className="setting-item">
             <span>Notifications</span>
-            <div className="toggle active">
-               <div className="toggle-thumb" style={{ right: '2px', left: 'auto' }} />
+            <div 
+              className={`toggle ${preferences.notifications ? 'active' : ''}`}
+              onClick={() => togglePreference('notifications')}
+              style={{ cursor: 'pointer' }}
+            >
+               <div className="toggle-thumb" style={preferences.notifications ? { right: '2px', left: 'auto' } : { left: '2px', right: 'auto' }} />
             </div>
           </div>
         </div>

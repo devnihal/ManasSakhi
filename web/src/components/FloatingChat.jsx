@@ -148,7 +148,7 @@ const FloatingChat = () => {
             >
               <div className="chat-header">
                 <div>
-                  <h3>ManasSakhi</h3>
+                  <h3>ManaSakhi</h3>
                   <p>Always here to listen</p>
                 </div>
                 <button

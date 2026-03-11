@@ -21,13 +21,11 @@ const Splash = () => {
         transition={{ duration: 0.8 }}
         className="text-center"
       >
-        <motion.div
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 2, repeat: 1, ease: "easeInOut" }}
-          style={{ width: '100px', height: '100px', borderRadius: '50%', margin: '0 auto 24px auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        <div
+          style={{ width: '120px', height: '120px', margin: '0 auto 24px auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
-          <span style={{ fontSize: '48px' }}> <LeafIcon size={70} color='var(--primary-teal)' /> </span>
-        </motion.div>
+          <img src="/logo.png" alt="ManaSakhi Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        </div>
         <h1 style={{ color: 'var(--primary-teal)', marginBottom: '8px', fontSize: '32px' }}>ManaSakhi</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '18px', letterSpacing: '2px' }}>മനസ്സഖി</p>
       </motion.div>
