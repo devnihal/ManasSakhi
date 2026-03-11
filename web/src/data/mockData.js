@@ -5,21 +5,24 @@ export const feedContent = {
       title: "Daily Journal",
       text: "Reflect on your present moment.",
       actionText: "Write",
-      type: "journal"
+      type: "journal",
+      route: "/journal"
     },
     {
       id: "c2",
       title: "Mindful Walking",
       text: "A 10-minute guided audio for your evening stroll.",
       actionText: "Listen",
-      type: "audio"
+      type: "audio",
+      route: "/audio"
     },
     {
        id: "c3",
        title: "Gratitude Check-in",
        text: "What are 3 things you are grateful for today?",
        actionText: "Start",
-       type: "exercise"
+       type: "exercise",
+       route: "/gratitude"
     }
   ],
   stressed: [
@@ -36,14 +39,16 @@ export const feedContent = {
       title: "Grounding Technique",
       text: "5-4-3-2-1 exercise to bring you back to the present.",
       actionText: "Start",
-      type: "exercise"
+      type: "exercise",
+      route: "/grounding"
     },
      {
       id: "s3",
       title: "Talk to Someone",
       text: "Reach out to a trusted contact or helpline.",
       actionText: "Connect",
-      type: "contact"
+      type: "contact",
+      route: "/contact"
     }
   ]
 };
